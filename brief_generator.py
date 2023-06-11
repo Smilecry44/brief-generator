@@ -14,15 +14,15 @@ openai.api_key = "VOTRE_CLÉ_D'ACCÈS_API"
 # Fonction pour appeler l'API OpenAI
 def call_openai_api(prompt):
     try:
-        response = openai.Completion.create(
-            engine="text-davinci-003",
-            prompt=prompt,
-            max_tokens=2000
+        completion = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "system", "content": "Tu es un redacteur SEO avec 20 années d'expérience. Tu proposes des réponses de qualité et professionnelles en prenant toujours en compte la notion de référencement naturel"},{"role": "user", "content": prompt}]
         )
-        return response.choices[0].text.strip()
+        return completion.choices[0].message.content.strip()
     except openai.error.AuthenticationError:
         st.error("Erreur d'authentification OpenAI. Veuillez vérifier votre clé d'accès API.")
         return ""
+
 
 # Fonction pour effectuer la recherche sur Google et parser les résultats
 def search_google(keyword):
