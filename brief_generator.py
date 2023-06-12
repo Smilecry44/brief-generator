@@ -51,7 +51,7 @@ def parse_search_results(html):
 st.sidebar.header("Générateur de brief")
 
 # Récupérer la clé d'accès API d'OpenAI
-api_key = st.sidebar.text_input("Clé d'accès API OpenAI")
+api_key = st.sidebar.text_input("Clé d'accès API OpenAI", type='password')
 
 # Récupérer le mot-clé à analyser
 keyword = st.sidebar.text_input("Mot-clé à analyser")
