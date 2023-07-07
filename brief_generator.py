@@ -21,7 +21,7 @@ openai.api_key = "VOTRE_CLÉ_D'ACCÈS_API"
 def call_openai_api(prompt):
     try:
         completion = openai.ChatCompletion.create(
-            model="gpt-4",
+            model="gpt-3.5-turbo",
             messages=[{"role": "system", "content": "Tu es un redacteur SEO avec 20 années d'expérience. Tu proposes des réponses de qualité et professionnelles en prenant toujours en compte la notion de référencement naturel"},{"role": "user", "content": prompt}]
         )
         return completion.choices[0].message.content.strip()
