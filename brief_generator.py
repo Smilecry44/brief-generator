@@ -60,7 +60,7 @@ st.sidebar.header("Générateur de brief")
 
 # Récupérer la clé d'accès API d'OpenAI
 api_key = st.sidebar.text_input("Clé d'accès API OpenAI", type="password")
-api = ["gpt-3.5-turbo", "gpt-4"]
+api = ["gpt-3.5-turbo", "gpt-4", "gpt-4o"]
 api_choice = st.sidebar.selectbox("Quelle API ?", api)
 
 # Récupérer le mot-clé à analyser
